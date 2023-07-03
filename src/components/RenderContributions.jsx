@@ -15,49 +15,26 @@ const RenderContributions = ({state}) => {
 
   return dateRange.map((date) => {
     const count = state[date] || 0;
-    if (count >= 30) {
+
+    const contributionClass =
+      count >= 30
+        ? "contribution more30"
+        : count >= 20
+        ? "contribution more20"
+        : count >= 10
+        ? "contribution more10"
+        : count > 0
+        ? "contribution more0"
+        : "contribution";
+
       return (
-        <div className="contribution more30">
+        <div className={contributionClass}>
           <div className="contributionDate">
             <p>{count} contributions</p>
             <p>{date}</p>
           </div>
-        </div>)
-    } 
-    else if (count >= 20) {
-      return (
-        <div className="contribution more20">
-          <div className="contributionDate">
-            <p>{count} contributions</p>
-            <p>{date}</p>
-          </div>
-        </div>)
-    }
-    else if (count >= 10) {
-      return (
-        <div className="contribution more10">
-          <div className="contributionDate">
-            <p>{count} contributions</p>
-            <p>{date}</p>
-          </div>
-        </div>)
-    }
-    else if (count > 0) {
-      return (
-        <div className="contribution more0">
-          <div className="contributionDate">
-            <p>{count} contributions</p>
-            <p>{date}</p>
-          </div>
-        </div>)
-    }
-    return (
-      <div className="contribution">
-        <div className="contributionDate">
-            <p>{count} contributions</p>
-            <p>{date}</p>
         </div>
-      </div>)
+      )
   });
 }
 
