@@ -17,6 +17,7 @@
 .contribution {
   width: 15px;
   height: 15px;
+  margin-left: 1px;
 
   background-color: #f4f3f3;
 
@@ -94,3 +95,10 @@
   font-size: 15px;
   color: #c5c5c5;
 }  
+
+.contributionInfo {
+  margin: 30px;
+  padding: 10px;
+
+  display: flex;
+}

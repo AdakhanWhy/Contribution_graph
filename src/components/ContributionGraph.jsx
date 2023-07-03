@@ -4,6 +4,7 @@ import GraphDays from "./GraphDays";
 import GraphMonths from "./GraphMonths";
 import "./GraphStyles.css";
 import RenderContributions from "./RenderContributions";
+import ContributionInfo from "./ContributionInfo";
 
 const API = "https://dpg.gg/test/calendar.json";
 
@@ -28,6 +29,7 @@ const ContributionGraph = () => {
                 <RenderContributions state={state} />
             </div>
         </div>
+        <ContributionInfo />
     </div>
   )
 };
